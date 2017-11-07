@@ -41,6 +41,7 @@
     <button class="btn btn-primary" @click="addNote">Submit</button>
   </div>
   <div class="col-sm-12">
+    <button class="btn btn-primary" @click="sort">Sort by priority</button>
     <div class="col-sm-4 note" v-for="(note, index) in notes">
       <div class="card">
           <button class="close" @click="removeNote(index)">&times;</button>
@@ -77,6 +78,11 @@
       ]
     },
     methods: {
+      sort () {
+        this.notes = this.notes.sort((a, b) => {
+          return b.priority > a.priority ? 1 : 0
+        })
+      },
       addNote() {
         let { text, title, color, priority } = this.note
         this.notes.push({
