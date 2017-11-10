@@ -1,5 +1,6 @@
 <template>
-<div class="col-md-4" @click="switchCharacter">
+<div class="col-md-4"
+     @click="switchCharacter">
   <div class="character-card">
     <div class="card-block">
       <h4 class="card-title">{{character.name}}</h4>
@@ -29,7 +30,7 @@ export default {
         .then(json => this.character = json)
     },
     switchCharacter() {
-      let random_id = Math.floor(Math.random() * 83) + 1
+      let random_id = Math.ceil(Math.random() * 83)
       this.fetchCharacter(random_id)
     }
   },

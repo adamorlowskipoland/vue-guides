@@ -5,8 +5,8 @@
     <Character
       v-for="(id, index) in initial_ids"
       :id="id"
-      key="index"
-    />
+      :key="index">
+    </Character>
   </div>
 </div>
 </template>
